@@ -1,0 +1,31 @@
+<div id="cardview" class="main">
+  <!--cards -->
+  <div class="header">
+    <app-admin-header></app-admin-header>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-5 col-12"></div>
+    <div class="form-group col-sm-6  col-12 serach-box">
+        <input type="text" class="form-control" [(ngModel)]="search" placeholder="Search Item name" name="search">
+      </div>
+  </div>
+ 
+  <div class="card col-6 col-sm-3 col-md-3" *ngFor=" let cardDetail of cardDetails | card:search:'name' ">
+    <div class="userProfile">
+      <img src="assets/images/ecommerce.png">
+    </div>
+    <div class="title">
+      <h1 class="fs10">
+        {{cardDetail.name}}
+      </h1>
+    </div>
+    <div class="userAddress">
+      <p class="fs17">{{ cardDetail.description}}</p>
+      <p class="fs15">${{ cardDetail.price}}</p><br>
+      <button class="btn btn-primary userDetailsButtons" routerLink='{{"/editcard/" + cardDetail.id}}'>Edit Details</button>
+      <button class="btn btn-success userDetailsButtons" routerLink='{{"/viewdetails/" + cardDetail.id}}'>View Details</button>
+    </div>
+    <!--cards -->
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container ordet-details">
+  <table class="table table-striped col-sm-8">
+    <tbody>
+      <h4>Order for {{orderDetails.firstName}} {{orderDetails.lastName}}</h4>
+      <tr *ngFor=" let order of orderDetails.orders">
+        <td>{{order.productName}}</td>
+        <td class="order-detalis-right">{{order.itemCost}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="order-detalis-right">{{totalItemCost}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <a routerLink='{{"/cardlist"}}'>View all Items</a>
+</div>

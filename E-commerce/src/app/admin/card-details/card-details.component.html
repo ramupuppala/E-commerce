@@ -1,0 +1,20 @@
+<!-- card indivisual Details  -->
+
+<div class="cardDetails">
+    <div class="header">
+        <app-admin-header></app-admin-header>
+      </div> 
+    <h2 style="text-align:center">Item Details</h2>
+
+    <div class="card">
+      <img src="assets/images/ecommerce.png" class="userProfile" alt="John">
+      <h1> {{cardDetail.name}}</h1>
+      <p>{{ cardDetail.description}}</p>
+      <p class="title">${{ cardDetail.price}}</p>    
+      <p><button class="btn" routerLink='{{"/editcard/" + cardDetail.id}}'>Edit Details</button>
+      </p>
+      
+    </div>
+</div>
+
+<!-- End of card indivisual Details  -->

@@ -1,0 +1,40 @@
+<div class="container order-list-table">
+    <div class="header">
+        <app-admin-header></app-admin-header>
+      </div> 
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th></th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Order Total</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let customerDetail of customerDetails">
+        <td>
+          <div class="userProfile">
+            <img src="assets/images/customer.png">
+          </div>
+        </td>
+        <td>{{customerDetail.firstName}}</td>
+        <td>{{customerDetail.lastName}}</td>
+        <td>{{customerDetail.address}}</td>
+        <td>{{customerDetail.city}}</td>
+        <td>{{customerDetail.state.name}}</td>
+        <td>
+          {{orderTotal[customerDetail.id]}}
+        </td>
+        <td><a routerLink='{{"/orderdetails/" + customerDetail.id}}'>View Orders</a></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+
+</div>
